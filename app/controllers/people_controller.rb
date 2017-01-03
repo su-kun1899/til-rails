@@ -30,6 +30,12 @@ class PeopleController < ApplicationController
     redirect_to '/people'
   end
 
+  def delete
+    person = Person.find(params[:id])
+    person.destroy
+    redirect_to '/people'
+  end
+
   private
   def person_params
     params.require(:person).permit(:name, :age, :mail)
