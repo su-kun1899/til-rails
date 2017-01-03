@@ -1,0 +1,22 @@
+<h1>People#index</h1>
+<p><%= @msg %></p>
+<form method="post" action="/people/create">
+  <table>
+    <tr>
+      <th><label for="name">Name</label></th>
+      <td><input id="name" type="text" name="name"></td>
+    </tr>
+    <tr>
+      <th><label for="age">Age</label></th>
+      <td><input id="age" type="text" name="age"></td>
+    </tr>
+    <tr>
+      <th><label for="mail">Mail</label></th>
+      <td><input id="mail" type="text" name="mail"></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td><input type="submit"></td>
+    </tr>
+  </table>
+</form>
