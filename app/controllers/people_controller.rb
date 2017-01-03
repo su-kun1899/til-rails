@@ -15,7 +15,18 @@ class PeopleController < ApplicationController
   end
 
   def create
-    person = Person.create(person_params)
+    Person.create(person_params)
+    redirect_to '/people'
+  end
+
+  def edit
+    @msg = 'Edit data. [id =' + params[:id] + ']'
+    @person = Person.find(params[:id])
+  end
+
+  def update
+    person = Person.find(params[:id])
+    person.update(person_params)
     redirect_to '/people'
   end
 
