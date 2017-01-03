@@ -1,22 +1,22 @@
 <h1>People#index</h1>
 <p><%= @msg %></p>
-<form method="post" action="/people/create">
-  <table>
-    <tr>
-      <th><label for="name">Name</label></th>
-      <td><input id="name" type="text" name="name"></td>
-    </tr>
-    <tr>
-      <th><label for="age">Age</label></th>
-      <td><input id="age" type="text" name="age"></td>
-    </tr>
-    <tr>
-      <th><label for="mail">Mail</label></th>
-      <td><input id="mail" type="text" name="mail"></td>
-    </tr>
-    <tr>
-      <th></th>
-      <td><input type="submit"></td>
-    </tr>
-  </table>
-</form>
+<%= form_for(@person, url: {controller: 'people', action: 'create'}) do |form| %>
+    <table>
+      <tr>
+        <th>Name</th>
+        <td><%= form.text_field :name %></td>
+      </tr>
+      <tr>
+        <th>Age</th>
+        <td><%= form.text_field :age %></td>
+      </tr>
+      <tr>
+        <th>Mail</th>
+        <td><%= form.text_field :mail %></td>
+      </tr>
+      <tr>
+        <th></th>
+        <td><%= form.submit '送信' %></td>
+      </tr>
+    </table>
+<% end %>
